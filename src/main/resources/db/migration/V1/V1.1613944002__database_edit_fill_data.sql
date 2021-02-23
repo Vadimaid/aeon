@@ -1,0 +1,6 @@
+INSERT INTO currency (created_at, name, code)
+SELECT now(), 'USD', 'USD'
+WHERE NOT EXISTS(SELECT * FROM currency WHERE code = 'USD');
+
+ALTER TABLE IF EXISTS accounts
+    ADD COLUMN IF NOT EXISTS currency_id BIGINT REFERENCES currency (id) ON UPDATE CASCADE ON DELETE NO ACTION;
