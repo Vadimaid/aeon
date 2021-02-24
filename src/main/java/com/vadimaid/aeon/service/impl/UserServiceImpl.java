@@ -93,7 +93,7 @@ public class UserServiceImpl implements UserService {
         user.setPassword(passwordEncoder.encode(source.getPassword()));
         user.setFirstName(source.getFirstName());
         user.setLastName(source.getLastName());
-        user.setIsActive(Boolean.TRUE);
+        user.setIsActive(Boolean.FALSE);
         user.setIsBlocked(Boolean.FALSE);
         user.setFailAttempts(0);
 
