@@ -42,6 +42,7 @@ public class LoginServiceImpl implements LoginService {
         }
 
         userService.renewFailAttempts(loginRequest.getLogin());
+        userService.loginUser(loginRequest.getLogin());
         return tokenHelper.generateToken(user.getUsername());
     }
 
